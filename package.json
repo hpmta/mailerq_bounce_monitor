@@ -1,0 +1,37 @@
+{
+  "name": "mailerq_bounce_monitor",
+  "description": "a daemon to read ",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "0.10.24"
+  },
+  "dependencies": {
+    "coffee-script": "1.6.3",
+    "pg": "*",
+    "sequelize": "*",
+    "sequelize-postgres": "*",
+    "wrench": "*",
+    "which": "*",
+    "amqp": "*",
+    "winston": "*",
+    "winston-syslog": "*",
+    "lodash": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "supertest": "*",
+    "request": "*",
+    "supervisor": "*",
+    "puts": "*",
+    "node-inspector": "*",
+    "async": "*",
+    "should": "*"
+  },
+  "scripts": {
+    "install": "node node_modules/coffee-script/bin/cake build",
+    "start": "node server.js",
+    "test": "mocha --reporter spec -G --require should --ui bdd --compilers coffee:coffee-script --colors --require app.coffee spec/*_spec.coffee"
+  }
+}

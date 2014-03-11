@@ -1,0 +1,98 @@
+[
+  {
+     "deliveryId" : "-10",
+     "envelope" : "pedro@softa.com.br",
+     "ips" : [ "10.0.0.2", "10.0.0.234" ],
+     "maxattempts" : 6,
+     "maxdelivertime" : "2014-03-07 17:03:19",
+     "messageId" : "23534345",
+     "message-token" : "1231231231",
+     "recipient" : "pedroaxelrud.maislagumacoisa@gmail.com",
+     "results" : [
+        {
+           "code" : 550,
+           "description" : "The email account that you tried to reach does not exist. Please try double-checking the recipient's email address for typos or unnecessary spaces. Learn more at http://support.google.com/mail/bin/answer.py?answer=6596 39si3417756qgx.91 - gsmtp",
+           "from" : "10.0.0.234",
+           "status" : "5.1.1",
+           "time" : "2014-03-06 17:03:22",
+           "to" : "173.194.68.27",
+           "type" : "error"
+        }
+     ],
+     "subdomain" : "pedro"
+  },
+  {
+     "deliveryId" : "-15",
+     "envelope" : "pedro@softa.com.br",
+     "ips" : [ "10.0.0.155", "10.0.0.234" ],
+     "maxattempts" : 6,
+     "maxdelivertime" : "2014-03-04 15:04:12",
+     "messageId" : "23534345",
+     "message-token" : "1231231231",
+     "recipient" : "pedroaxl@sasdafdsf89274adasdfnsdgmail.com",
+     "results" : [
+        {
+           "time" : "2014-03-03 15:04:12",
+           "type" : "nohosts"
+        }
+     ],
+     "subdomain" : "pedro"
+  },
+  {
+     "deliveryId" : "-15",
+     "envelope" : "pedro@softa.com.br",
+     "ips" : [ "10.0.0.155", "10.0.0.234" ],
+     "maxattempts" : 6,
+     "maxdelivertime" : "2014-03-04 15:04:12",
+     "messageId" : "23534345",
+     "message-token" : "1231231231",
+     "recipient" : "pedroaxl@sasdafdsf89274adasdfnsdgmail.com",
+     "results" : [
+        {
+           "time" : "2014-03-03 15:04:12",
+           "type" : "offline"
+        }
+     ],
+     "subdomain" : "pedro"
+  },
+  {
+     "transactionalDeliveryId" : "-10",
+     "envelope" : "pedro@softa.com.br",
+     "ips" : [ "10.0.0.155", "10.0.0.234" ],
+     "maxattempts" : 6,
+     "maxdelivertime" : "2014-03-04 15:04:12",
+     "messageId" : "23534345",
+     "message-token" : "1231231231",
+     "recipient" : "pedroaxl@sasdafdsf89274adasdfnsdgmail.com",
+     "results" : [
+        {
+           "time" : "2014-03-03 15:04:12",
+           "type" : "nohosts"
+        }
+     ],
+     "subdomain" : "pedro"
+  },
+  {
+     "transactionalDeliveryId" : "-10",
+     "envelope" : "pedro@softa.com.br",
+     "ips" : [ "10.0.0.155", "10.0.0.234" ],
+     "maxattempts" : 6,
+     "maxdelivertime" : "2014-03-04 15:04:12",
+     "messageId" : "23534345",
+     "message-token" : "1231231231",
+     "recipient" : "pedroaxl@sasdafdsf89274adasdfnsdgmail.com",
+     "results" : [
+        {
+           "code" : 550,
+           "description" : "The email account that you tried to reach does not exist. Please try double-checking the recipient's email address for typos or unnecessary spaces. Learn more at http://support.google.com/mail/bin/answer.py?answer=6596 39si3417756qgx.91 - gsmtp",
+           "from" : "10.0.0.234",
+           "status" : "5.1.1",
+           "time" : "2014-03-06 17:03:22",
+           "to" : "173.194.68.27",
+           "type" : "error"
+        }
+
+     ],
+     "subdomain" : "pedro"
+  }
+]

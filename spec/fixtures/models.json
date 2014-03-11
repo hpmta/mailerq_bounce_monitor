@@ -1,0 +1,127 @@
+{
+  "client": {
+    "id": -20,
+    "subdomain": "softa",
+    "name": "Softa",
+    "url": "http://email.softa.com.br",
+    "credits": 250,
+    "email": "pedro@softa.com.br"
+  },
+  "message": {
+    "id": -20,
+    "client_id": -20,
+    "title": "Huuraaayy",
+    "subject": "Aloha!",
+    "from_name": "Pedro",
+    "from_email": "pedro@mailee.me",
+    "reply_email": "pedro@mailee.me",
+    "html": "<h1>Aloha!</h1>",
+    "status": 2,
+    "total": 2
+  },
+  "contacts": [
+    {
+      "id": -10,
+      "client_id": -20,
+      "email": "john@google.com",
+      "contact_status_id": 2
+    },
+    {
+      "id": -15,
+      "client_id": -20,
+      "email": "adam@google.com",
+      "contact_status_id": 2
+    }
+  ],
+  "deliveries": [
+    {
+      "id": -10,
+      "message_id": -20,
+      "contact_id": -10,
+      "delivery_status_id": 2,
+      "email": "john@google.com"
+    },
+    {
+      "id": -15,
+      "message_id": -20,
+      "contact_id": -15,
+      "delivery_status_id": 2,
+      "email": "adam@google.com"
+    }
+  ],
+  "transactional_deliveries": [
+    {
+      "id": -10,
+      "client_id": -20,
+      "from": "john@google.com",
+      "to": "adam@google.com",
+      "delivery_status_id": 2,
+      "accounted": false,
+      "unique_id": "4433bf1c538d33e84c4dbe0f5458634b"
+    }
+  ],
+  "delivery_status": [
+    {
+      "id": 0,
+      "name": "Aguardando"
+    },
+    {
+      "id": 2,
+      "name": "Enviado com successo",
+      "contact_status_id": 3
+    },
+    {
+      "id": -1,
+      "name": "Problema no envio",
+      "contact_status_id": 1
+    },
+    {
+      "id": -6,
+      "name": "Desconhecido",
+      "contact_status_id": 1
+    },
+    {
+      "id": -4,
+      "name": "Quota",
+      "regex": "inbox is full|Quota\\s+excedida|Mailbox size limit exceeded|File too large|error\\s+writing\\s+to\\s+mailbox|Quota insuficiente|Over\\s+quota|Status: 5\\.2\\.2|A caixa de e-mail esta lotada|exceeded storage allocation|Mailbox has exceeded the limit|ACIMA DA QUOTA DE RECEBIMENTO|Too Many Messages in Folde|Quota exceeded|Mailbox full|Quota exceeded while writing|mailbox is full|maildir over quota|Disk quota exceeded|No space left on device|Over quota|disk quota exceeded",
+      "contact_status_id": 1
+    },
+    {
+      "id": -2,
+      "name": "Erro temporário",
+      "regex": "message is looping|system config error|Message probably in a routing loop|Temporary error|This could indicate a mail loop|This account has been temporarily suspended|Sender domain must exist|Your domain has no DNS|Message\\s+temporarily\\s+deferred|Temporary local problem|Network\\s+is\\s+unreachable|Connection\\s+timeout|timed out|Resources\\s+temporarily\\s+not\\s+available|Resources temporarily unavailable|421 trouble resolving DNS|451 time out|Temporary server busy|554 Backend Replied|delivery temporarily suspended: lost connection|Connection\\s+timed\\s+out|Delivery expired|excessive recursion|mail transport unavailable|loops back to myself|error writing to mailbox|Syntax error in parameters or arguments|mail forwarding loop|Broken pipe|timeout exceeded|disabled or discontinued|email account that you tried to reach is disabled|Operation timed|delivery time expired|lost connection with|Delivery to the following recipient has been delayed",
+      "contact_status_id": 1
+    },
+    {
+      "id": -5,
+      "name": "Serviço indisponível",
+      "regex": "Service unavailable|No\\s+route\\s+to\\s+host",
+      "contact_status_id": 1
+    },
+    {
+      "id": -101,
+      "name": "Domínio não existente",
+      "regex": "not have any MX records|domain may not exist|domain doesn't exist|553 PTR nao configurado para esse IP|invalid\\s+address|NEW DOMAIN|dominio nao existe ou esta desativado|Domain change|Unrouteable address|Host unknown|Malformed or unexpected name server reply|Host or domain name not found|unable to connect successfully to the destination mail server",
+      "contact_status_id": -1
+    },
+    {
+      "id": -3,
+      "name": "Email rejeitado",
+      "regex": "has\\s+been\\s+rejected|Reject,.*SPAM|Message content rejected|message was rejected|foi classificado como SPAM|not permitted to relay|Invalid\\s+sender\\s+address|Access from ip .* blocked|spam score exceeded|Administrative prohibition|looks like spam|Spam detected|Relay\\s+denied|Email Rejeitado|authentication\\s+needed|Challenge Response|MAV BL|foi considerado SPAM|failed to meet SPF requirements|SMTP authentication is required|o solicitado ou spam|Detectado como SPAM|MENSAGEM CLASSIFICADA COMO SPAM|553 MAV 4\\.3 - SPAM|Email aparentemente nao solicitado|Local Policy Violation|Status: 5\\.7\\.1|Seu remetente foi bloqueado em nosso servidor|consider the message to be spam|Mail restricted from this address|domain's blacklist|SERVER IS TO BE USED WITH AUTHENTICATION|The IP .+ is Blacklisted|as a relay, but I have not been configured|Relay negado|Message cannot be sent - requested by server extension|Relaying denied|Need Recipient|Sender Denied|considered spam|spam rejection|not our customer|REJECT_IP\\.html|X-IronPort-Anti-Spam-Result|my list of allowed rcpthosts|Mail appears to be unsolicited|This system is not configured to relay mail|SPAM \\(in reply to RCPT TO command\\)|Message rejected as spam|Mail rejected by|content with spam-like characteristics|is neither permitted nor denied by best guess record for domain of|Unable to relay|that domain isn't in my list of allowed rcpthosts|server permanently rejected message|Relay access denied|Policy Rejection|refused|Your email is considered spamrejected as spam",
+      "contact_status_id": 1
+    },
+    {
+      "id": -102,
+      "name": "Usuário inexistente",
+      "regex": "Nao existe uma caixa|does not specify a valid Notes mail|Account is not local|reach does not exist",
+      "contact_status_id": -1
+    },
+    {
+      "id": -103,
+      "name": "Nome mal-formado",
+      "regex": "malformed address",
+      "contact_status_id": -1
+    }
+  ]
+
+}
