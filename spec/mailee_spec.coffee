@@ -22,8 +22,8 @@ describe 'Model', ->
           db.DeliveryStatus.findAll().success (deliveryStatus) ->
             db.Delivery.findAll().success (rows) ->
               mailee.setBounce event[0], deliveryStatus, (err, result) ->
-                result.should.have.property('contactId', -10)
-                result.should.have.property('contactStatusId', -1)
+                result.should.have.property('contact_id', -10)
+                result.should.have.property('status', -1)
                 result.should.have.property('event', event[0])
                 done()
       describe ' for a transactional delivery', ->
@@ -31,8 +31,8 @@ describe 'Model', ->
           db.DeliveryStatus.findAll().success (deliveryStatus) ->
             db.TransactionalDelivery.findAll().success (rows) ->
               mailee.setBounce event[3], deliveryStatus, (err, result) ->
-                result.should.have.property('transactionalDeliveryId', -10)
-                result.should.have.property('deliveryStatusId', -101)
+                result.should.have.property('transactional_delivery_id', -10)
+                result.should.have.property('status', -101)
                 result.should.have.property('event', event[3])
                 done()
 

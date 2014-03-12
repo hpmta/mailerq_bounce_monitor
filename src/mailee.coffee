@@ -10,18 +10,16 @@ Mailee::version = (req, res) ->
   ), req, res
 
 Mailee::setBounce = (event, deliveryStatus, callback) ->
-  if event.deliveryId
-    log.debug {deliveryId: event.deliveryId, status: @eventResults(event).status, description: @eventResults(event).description}
+  if event.delivery_id
     @findDelivery event, (err, delivery) ->
       return callback err, null if err
       delivery.setBounce(event, deliveryStatus, callback)
-  else if event.transactionalDeliveryId
-    log.debug {transactionalDeliveryId: event.transactionalDeliveryId, status: @eventResults(event).status, description: @eventResults(event).description} 
+  else if event.transactional_delivery_id
     @findTransactionalDelivery event, (err, transactionalDelivery) ->
       return callback err, null if err
       transactionalDelivery.setBounce(event, deliveryStatus, callback)
   else
-    err = "event without delivery_id or transactionalDeliveryId, ignoring."
+    err = "event without delivery_id or transactional_delivery_id, ignoring."
     log.debug err
     callback err, null
 
@@ -40,24 +38,24 @@ Mailee::updateContactStatus = (err, result, callback) ->
 
 Mailee::findDelivery = (event, callback) ->
   db.Delivery.find(
-    where: { id: event.deliveryId }
+    where: { id: event.delivery_id }
   ).success (delivery) ->
-    log.notice "Couldn't find delivery with id #{event.deliveryId}" unless delivery
-    return callback "NOTICE: couldn't find delivery with id #{event.deliveryId}", null unless delivery
+    log.notice "Couldn't find delivery with id #{event.delivery_id}" unless delivery
+    return callback "NOTICE: couldn't find delivery with id #{event.delivery_id}", null unless delivery
     return callback null, delivery
   .error (err) ->
-    log.error  "Couldn't find delivery with id #{event.deliveryId}: #{err}"
+    log.error  "Couldn't find delivery with id #{event.delivery_id}: #{err}"
     return callback err
 
 Mailee::findTransactionalDelivery = (event, callback) ->
   db.TransactionalDelivery.find(
-    where: { id: event.transactionalDeliveryId }
+    where: { id: event.transactional_delivery_id }
   ).success (transactionalDelivery) ->
-    log.notice "Couldn't find transactional delivery with id #{event.transactionalDeliveryId}" unless transactionalDelivery
-    return callback "NOTICE: couldn't find transactional delivery with id #{event.transactionalDeliveryId}", null unless transactionalDelivery
+    log.notice "Couldn't find transactional delivery with id #{event.transactional_delivery_id}" unless transactionalDelivery
+    return callback "NOTICE: couldn't find transactional delivery with id #{event.transactional_delivery_id}", null unless transactionalDelivery
     return callback null, transactionalDelivery
   .error (err) ->
-    log.error "transactional_delivery_id=#{event.transactionalDeliveryId}; #{err}"
+    log.error "transactional_delivery_id=#{event.transactional_delivery_id}; #{err}"
     return callback err
 
 Mailee::eventResults = (event) ->

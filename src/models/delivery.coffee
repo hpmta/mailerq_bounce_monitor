@@ -37,8 +37,8 @@ setBounce = (event, deliveryStatus, callback) ->
 
   delivery.save()
     .success () ->
-      results = {deliveryId: delivery.id, contactId: delivery.contact_id, event: event}
-      results.contactStatusId = status[0].values.contact_status_id if status
+      results = {delivery_id: delivery.id, contact_id: delivery.contact_id, status: delivery.delivery_status_id, event: event}
+      results.status = status[0].values.contact_status_id if status
       #log.debug "Set bounce status #{status[0].values.id} for delivery #{delivery.id}"
       return callback null, results
     .error (err) ->

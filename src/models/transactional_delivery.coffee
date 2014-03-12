@@ -22,7 +22,7 @@ setBounce = (event, deliveryStatus, callback) ->
 
   transactionalDelivery.save()
     .success () ->
-      results = {transactionalDeliveryId: transactionalDelivery.id, deliveryStatusId: transactionalDelivery.delivery_status_id, event: event}
+      results = {transactional_delivery_id: transactionalDelivery.id, status: transactionalDelivery.delivery_status_id, event: event}
       return callback null, results
     .error (err) ->
       log.error "Couldn't set bounce for transactional delivery #{transactionalDelivery.id}: #{err}"
