@@ -1,4 +1,5 @@
 amqp = require("amqp")
+fs = require("fs")
 logger    = require("./src/logger")
 log = logger.log
 

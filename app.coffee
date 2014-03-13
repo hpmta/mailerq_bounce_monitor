@@ -1,4 +1,5 @@
 amqp = require("amqp")
+fs = require("fs")
 maileeClass = require("./src/mailee")
 db        = require("./src/models")
 logger    = require("./src/logger")

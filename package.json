@@ -16,7 +16,8 @@
     "amqp": "*",
     "winston": "*",
     "winston-syslog": "*",
-    "lodash": "*"
+    "lodash": "*",
+    "daemonize2": "*"
   },
   "devDependencies": {
     "mocha": "*",
