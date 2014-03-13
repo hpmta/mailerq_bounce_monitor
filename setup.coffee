@@ -10,9 +10,9 @@ else
 
 connection = amqp.createConnection(rabbitmq_config)
 
-for queue_name in ['failure', 'failure_parse', 'outbox', 'retries', 'success']
-  
-  connection.on 'ready', () ->
+connection.on 'ready', () ->
+
+  for queue_name in ['failure', 'failure_parse', 'outbox', 'retries', 'success']
 
     connection.exchange queue_name, type: 'direct', durable: true, autoDelete: false, () ->
       log.info "Exchange #{queue_name} created"
@@ -25,4 +25,6 @@ for queue_name in ['failure', 'failure_parse', 'outbox', 'retries', 'success']
       else
         q.bind queue_name, 0, () ->
           log.info "Queue {queue_name} bound to exchange #{queue_name}"
+
+  connection.disconnect()
 
