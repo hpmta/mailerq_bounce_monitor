@@ -4,9 +4,14 @@ db        = require("./src/models")
 logger    = require("./src/logger")
 log = logger.log
 StringDecoder = require('string_decoder').StringDecoder;
-util = require("util")
 
 mailee = new maileeClass
+
+if fs.existsSync("#{__dirname}/../rabbitmq.json")
+  rabbitmq_config = JSON.parse(fs.readFileSync("#{__dirname}/../rabbitmq.json","utf8"))
+else
+  rabbitmq_config = {}
+
 
 db.sequelize.authenticate().complete (err) ->
   if err
@@ -15,7 +20,7 @@ db.sequelize.authenticate().complete (err) ->
     db.DeliveryStatus.findAll()
       .success (deliveryStatus) ->
         decoder = new StringDecoder("utf8")
-        connection = amqp.createConnection(host: "localhost")
+        connection = amqp.createConnection(rabbitmq_config)
         connection.on "ready", ->
           log.info "Connected to AMQP at localhost"
           connection.queue "failure_parse", durable: true, passive: true, autoDelete: false , (q) ->
