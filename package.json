@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "coffee-script": "1.6.3",
-    "pg": "*",
+    "pg": "~> 2.11.1",
     "sequelize": "*",
-    "sequelize-postgres": "*",
+    "sequelize-postgres": "~> 2.0",
     "wrench": "*",
     "which": "*",
     "amqp": "*",
