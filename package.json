@@ -15,7 +15,7 @@
     "which": "*",
     "amqp": "*",
     "winston": "*",
-    "winston-syslog": "*",
+    "winston-rsyslog": "*",
     "lodash": "*",
     "daemonize2": "*"
   },
